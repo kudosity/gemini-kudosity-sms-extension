@@ -1,0 +1,80 @@
+description = "Verify your Kudosity API credentials are configured and working correctly."
+
+prompt = """
+# Kudosity Setup — Credential Verification
+
+Verify that the user's Kudosity API credentials are configured and working. The credentials should already be stored via the extension settings (system keychain). If they are not set, guide the user through configuring them.
+
+## Step 1: Check Prerequisites
+
+Ask the user if they have a Kudosity account. If not, direct them to:
+- Sign up for a free account at **https://kudosity.com/signup**
+- Once signed in, go to **Developers → API Settings** to find their API credentials
+
+Show this table so they know what to look for:
+
+| Credential | Where to Find | Environment Variable |
+|-----------|--------------|---------------------|
+| API Key | Developers → API Settings → API Key | `KUDOSITY_API_KEY` |
+| API Secret | Developers → API Settings → API Secret | `KUDOSITY_API_SECRET` |
+
+Explain how the credentials are used:
+- **V1 API** (contacts, lists, bulk SMS): Uses Basic Auth with base64-encoded `API_KEY:API_SECRET`
+- **V2 API** (single SMS, MMS, webhooks): Uses `x-api-key` header with just the API Key
+
+## Step 2: Check if Credentials are Set
+
+Check if the environment variables are available:
+
+```
+echo "KUDOSITY_API_KEY is ${KUDOSITY_API_KEY:+set}" && echo "KUDOSITY_API_SECRET is ${KUDOSITY_API_SECRET:+set}"
+```
+
+If either is missing or empty, inform the user that they need to configure the extension settings:
+- Run `gemini extensions config gemini-kudosity-sms-extension` to set their credentials
+- Or set the environment variables manually in their shell profile (`~/.zshrc` or `~/.bashrc`)
+
+Do NOT proceed until both variables are confirmed set and non-empty.
+
+## Step 3: Verify V1 Credentials
+
+Verify the V1 credentials by calling the get-balance endpoint:
+
+```
+curl -s "https://api.transmitsms.com/get-balance.json" -u "${KUDOSITY_API_KEY}:${KUDOSITY_API_SECRET}"
+```
+
+If successful, show the user their account balance and currency.
+If it fails, check the error and help them troubleshoot (wrong credentials, account not activated, etc.)
+
+## Step 4: Verify V2 Credentials
+
+Verify the V2 API access by listing SMS messages:
+
+```
+curl -s -w "\\n%{http_code}" "https://api.transmitmessage.com/v2/sms?limit=1" -H "x-api-key: ${KUDOSITY_API_KEY}"
+```
+
+If the HTTP status code is 200, confirm that V2 credentials are working.
+If it returns 401 or 403, the API key is incorrect — help them troubleshoot.
+
+## Step 5: Summary
+
+Once both credentials are verified, show a summary:
+
+```
+✅ Kudosity Extension Setup Complete
+
+V1 API (contacts, lists, bulk SMS): Connected
+V2 API (SMS, MMS, webhooks):        Connected
+Account Balance: {balance} {currency}
+
+You can now use these skills (Gemini will activate them automatically):
+- send-sms         — Send SMS to individuals or lists
+- send-mms         — Send multimedia messages
+- create-list      — Create contact lists and add recipients
+- setup-webhook    — Configure delivery notifications
+
+Or ask directly: "Send an SMS to 0491570156 saying 'Hello from Gemini!'"
+```
+"""
