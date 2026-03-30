@@ -130,13 +130,15 @@ Remove Claude-specific frontmatter fields: `model: sonnet`, `effort: medium`, `m
 - [ ] Test MCP server connection
 - [ ] Test skill activation (send-sms, send-mms, create-list, setup-webhook)
 
+> **Status:** Ready for manual testing.
+
 ---
 
-## Phase 6 — Publishing
+## Phase 6 — Publishing ✅
 
-- [ ] Create GitHub repo at `github.com/kudosity/gemini-kudosity-sms-extension`
-- [ ] Push all files
-- [ ] Add `gemini-cli-extension` topic to repo
+- [x] Create GitHub repo at `github.com/kudosity/gemini-kudosity-sms-extension`
+- [x] Push all files
+- [x] Add `gemini-cli-extension` topic to repo (+ sms, mms, messaging, kudosity, gemini-cli)
 - [ ] Verify gallery listing (auto-discovered daily by crawler)
 
 ### Gallery Requirements (from Gemini docs)
