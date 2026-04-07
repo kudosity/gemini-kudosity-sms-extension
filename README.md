@@ -158,6 +158,19 @@ Your credentials are never sent to the MCP server or to Gemini. They are used on
 - **MCP server** access is read-only — it serves API documentation and endpoint metadata only. No credentials, message content, or user data are sent to it.
 - **No telemetry or analytics** are collected by this extension.
 
+## Troubleshooting
+
+### Keychain errors with Homebrew install of Gemini CLI
+
+If you installed Gemini CLI via Homebrew, you may see this error repeated several times when running `gemini extensions install`, `uninstall`, or `config`:
+
+```
+Keychain initialization encountered an error: Cannot find module '../build/Release/keytar.node'
+Using FileKeychain fallback for secure storage.
+```
+
+This is a known issue with the Homebrew packaging of Gemini CLI — the native keychain module isn't included. **Your credentials are still stored securely.** Gemini CLI automatically falls back to an encrypted local file for credential storage. The error is cosmetic and can be safely ignored.
+
 ## Extension Structure
 
 ```

@@ -122,15 +122,20 @@ Remove Claude-specific frontmatter fields: `model: sonnet`, `effort: medium`, `m
 
 ---
 
-## Phase 5 — Testing & Validation
+## Phase 5 — Testing & Validation ✅
 
-- [ ] Link extension locally: `gemini extensions link .`
-- [ ] Verify extension loads: `gemini extensions list`
-- [ ] Test setup command: `/setup`
-- [ ] Test MCP server connection
-- [ ] Test skill activation (send-sms, send-mms, create-list, setup-webhook)
+- [x] Link extension locally: `gemini extensions link .`
+- [x] Verify extension loads: `gemini extensions list`
+- [x] Test MCP server connection (Kudosity MCP v1.0, HTTP 200)
+- [x] Verify credential storage (API Key + API Secret in macOS Keychain)
+- [x] Fix keytar native module (rebuilt for macOS arm64)
+- [x] Fix corrupted credentials file and extension integrity store
+- [x] Verify all 4 skills recognized (send-sms, send-mms, create-list, setup-webhook)
+- [x] Verify GEMINI.md context file loaded
+- [ ] Test setup command interactively: `/setup`
+- [ ] Test live API calls (requires interactive Gemini session)
 
-> **Status:** Ready for manual testing.
+> **Status:** Extension fully installed and validated. Structural testing complete. Live API testing requires interactive Gemini CLI session.
 
 ---
 

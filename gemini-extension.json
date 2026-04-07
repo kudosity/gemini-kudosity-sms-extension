@@ -1,17 +1,17 @@
 {
   "name": "gemini-kudosity-sms-extension",
   "version": "1.0.0",
-  "description": "Send SMS and MMS messages, manage contact lists, and configure webhooks using the Kudosity messaging platform.",
+  "description": "Connect Gemini to Kudosity for SMS, MMS, contact list, and webhook workflows.",
   "settings": [
     {
       "name": "API Key",
-      "description": "Your Kudosity API key from Developers → API Settings. Used for V2 API (x-api-key header) and as part of V1 Basic Auth.",
+      "description": "Enter your Kudosity API key from Developers → API Settings.",
       "envVar": "KUDOSITY_API_KEY",
       "sensitive": true
     },
     {
       "name": "API Secret",
-      "description": "Your Kudosity API secret from Developers → API Settings. Used for V1 API Basic Auth (base64-encoded with API Key).",
+      "description": "Enter your Kudosity API secret from Developers → API Settings.",
       "envVar": "KUDOSITY_API_SECRET",
       "sensitive": true
     }

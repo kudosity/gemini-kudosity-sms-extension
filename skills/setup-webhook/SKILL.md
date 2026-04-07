@@ -1,6 +1,6 @@
 ---
 name: setup-webhook
-description: Create and manage webhooks on the Kudosity platform. Use when the user wants to receive notifications for SMS delivery status, inbound messages, MMS events, link hits, or opt-outs.
+description: Create and manage webhooks for delivery updates, inbound messages, link hits, and opt-outs.
 ---
 
 # Create & Manage Webhooks

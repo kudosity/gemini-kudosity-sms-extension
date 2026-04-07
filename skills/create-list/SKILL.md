@@ -1,6 +1,6 @@
 ---
 name: create-list
-description: Create contact lists and add contacts to them on the Kudosity platform. Use when the user wants to create a new contact list, add recipients to a list, or manage list contacts for SMS campaigns.
+description: Create contact lists and add recipients for messaging campaigns.
 ---
 
 # Create Contact Lists & Add Contacts

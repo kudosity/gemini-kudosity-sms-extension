@@ -1,6 +1,6 @@
 ---
 name: send-sms
-description: Send SMS messages via the Kudosity platform. Use when the user wants to send a text message to a single recipient or to a contact list. Supports scheduling, link tracking, and delivery callbacks.
+description: Send SMS messages to a recipient or contact list, with optional scheduling and delivery tracking.
 ---
 
 # Send SMS Messages

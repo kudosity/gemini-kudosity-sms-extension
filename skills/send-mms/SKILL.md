@@ -1,6 +1,6 @@
 ---
 name: send-mms
-description: Send MMS (multimedia) messages via the Kudosity platform. Use when the user wants to send a message with images, GIFs, videos, or audio to a recipient.
+description: Send MMS messages with images, GIFs, video, or audio.
 ---
 
 # Send MMS Messages
