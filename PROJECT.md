@@ -132,10 +132,10 @@ Remove Claude-specific frontmatter fields: `model: sonnet`, `effort: medium`, `m
 - [x] Fix corrupted credentials file and extension integrity store
 - [x] Verify all 4 skills recognized (send-sms, send-mms, create-list, setup-webhook)
 - [x] Verify GEMINI.md context file loaded
-- [ ] Test setup command interactively: `/setup`
-- [ ] Test live API calls (requires interactive Gemini session)
+- [x] Test setup command interactively: `/setup`
+- [x] Test live API calls (send-sms V2, create-list V1, send-sms V1 list, send-mms V2)
 
-> **Status:** Extension fully installed and validated. Structural testing complete. Live API testing requires interactive Gemini CLI session.
+> **Status:** Extension fully installed and validated. All live API tests passed on 2026-04-09 against real Kudosity endpoints.
 
 ---
 
@@ -144,7 +144,8 @@ Remove Claude-specific frontmatter fields: `model: sonnet`, `effort: medium`, `m
 - [x] Create GitHub repo at `github.com/kudosity/gemini-kudosity-sms-extension`
 - [x] Push all files
 - [x] Add `gemini-cli-extension` topic to repo (+ sms, mms, messaging, kudosity, gemini-cli)
-- [ ] Verify gallery listing (auto-discovered daily by crawler)
+- [x] Verify gallery listing — live at https://geminicli.com/extensions/?name=kudositygemini-kudosity-sms-extension
+- [x] Cut `v1.0.0` git tag and GitHub release (2026-04-09)
 
 ### Gallery Requirements (from Gemini docs)
 
