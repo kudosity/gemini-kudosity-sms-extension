@@ -36,6 +36,7 @@ Optional:
 ```bash
 curl -s -X POST "https://api.transmitmessage.com/v2/mms" \
   -H "x-api-key: ${KUDOSITY_API_KEY}" \
+  -H "User-Agent: gemini-extension/1.0.1" \
   -H "Content-Type: application/json" \
   -d '{
     "subject": "New Arrival",
