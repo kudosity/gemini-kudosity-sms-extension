@@ -35,6 +35,7 @@ Example curl command:
 ```bash
 curl -s -X POST "https://api.transmitsms.com/add-list.json" \
   -u "${KUDOSITY_API_KEY}:${KUDOSITY_API_SECRET}" \
+  -H "User-Agent: gemini-extension/1.0.1" \
   -d "name=My Campaign List&field_1=email&field_2=postcode"
 ```
 
@@ -58,6 +59,7 @@ Example curl command:
 ```bash
 curl -s -X POST "https://api.transmitsms.com/add-to-list.json" \
   -u "${KUDOSITY_API_KEY}:${KUDOSITY_API_SECRET}" \
+  -H "User-Agent: gemini-extension/1.0.1" \
   -d "list_id=4213644&msisdn=0491570156&countrycode=AU&first_name=John&last_name=Doe&field_1=john@example.com"
 ```
 

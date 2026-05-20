@@ -56,6 +56,7 @@ Optional parameters:
 ```bash
 curl -s -X POST "https://api.transmitmessage.com/v2/webhook" \
   -H "x-api-key: ${KUDOSITY_API_KEY}" \
+  -H "User-Agent: gemini-extension/1.0.1" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "SMS Events",
@@ -69,6 +70,7 @@ curl -s -X POST "https://api.transmitmessage.com/v2/webhook" \
 ```bash
 curl -s -X POST "https://api.transmitmessage.com/v2/webhook" \
   -H "x-api-key: ${KUDOSITY_API_KEY}" \
+  -H "User-Agent: gemini-extension/1.0.1" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Failed SMS Alerts",
@@ -83,7 +85,8 @@ curl -s -X POST "https://api.transmitmessage.com/v2/webhook" \
 
 ```bash
 curl -s "https://api.transmitmessage.com/v2/webhook" \
-  -H "x-api-key: ${KUDOSITY_API_KEY}"
+  -H "x-api-key: ${KUDOSITY_API_KEY}" \
+  -H "User-Agent: gemini-extension/1.0.1"
 ```
 
 ## Webhook Payload Examples
